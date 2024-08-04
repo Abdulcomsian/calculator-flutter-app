@@ -3,7 +3,7 @@ import 'package:calculator_flutter_app/features/weather/domain/repository/weathe
 import 'package:calculator_flutter_app/features/weather/domain/usecases/get_current_weather_usecase.dart';
 import 'package:injectable/injectable.dart';
 
-@LazySingleton(as: WeatherRepositoryImp)
+@LazySingleton(as: WeatherRepository)
 class WeatherRepositoryImp implements WeatherRepository {
   final WeatherRemoteDataSource _weatherRemoteDataSource;
 

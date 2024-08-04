@@ -1,7 +1,7 @@
 import 'package:calculator_flutter_app/common/extensions/num.dart';
 import 'package:calculator_flutter_app/common/widgets/app_text.dart';
 import 'package:calculator_flutter_app/common/widgets/user_avatar.dart';
-import 'package:calculator_flutter_app/features/auth/presentation/providers/driver_provider/driver_provider.dart';
+import 'package:calculator_flutter_app/features/auth/presentation/providers/user_provider/user_provider.dart';
 import 'package:calculator_flutter_app/features/auth/presentation/providers/update_profile_provider/update_profile_form_provider.dart';
 import 'package:calculator_flutter_app/features/home/presentation/views/dialogs/logout_confirmation_dialog.dart';
 import 'package:calculator_flutter_app/features/image_picker/presentation/providers/get_camera_image_provider.dart';
@@ -140,7 +140,7 @@ class _ProfileViewState extends ConsumerState<ProfileView> {
             /// [User Image]
             /// [Edit profile picture]
             Consumer(builder: (context, ref, _) {
-              final userAsync = ref.watch(driverProvider);
+              final userAsync = ref.watch(userProvider);
 
               if (!userAsync.hasValue) {
                 return const SizedBox();

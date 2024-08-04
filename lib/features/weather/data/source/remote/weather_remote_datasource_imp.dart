@@ -3,6 +3,7 @@ import 'package:calculator_flutter_app/features/weather/domain/models/weather/we
 import 'package:calculator_flutter_app/features/weather/domain/usecases/get_current_weather_usecase.dart';
 import 'package:calculator_flutter_app/helpers/network_call_helper/network_call_helper.dart';
 import 'package:calculator_flutter_app/util/consts/api.dart';
+import 'package:calculator_flutter_app/util/consts/keys.dart';
 import 'package:calculator_flutter_app/util/exceptions/message_exception.dart';
 import 'package:injectable/injectable.dart';
 import 'package:logger/logger.dart';
@@ -23,9 +24,12 @@ class WeatherRemoteDataSourceImp implements WeatherRemoteDataSource {
       GetCurrentWeatherUsecaseInput input) async {
     try {
       _logger.i(input.toString());
-      final response = await _networkCallHelper.get(
-        Apis.currentWeather,
-      );
+      final response =
+          await _networkCallHelper.get(Apis.currentWeather, params: {
+        "lat": input.lat,
+        "lon": input.lng,
+        "appId": weatherApiKey,
+      });
 
       final data = WeatherModel.fromJson(response);
 

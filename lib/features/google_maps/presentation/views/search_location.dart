@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:calculator_flutter_app/common/extensions/num.dart';
 import 'package:calculator_flutter_app/common/widgets/app_filled_button.dart';
-import 'package:calculator_flutter_app/util/consts/google_map_api_key.dart';
 import 'package:calculator_flutter_app/util/loading/loading.dart';
 import 'package:calculator_flutter_app/util/resources/r.dart';
 import 'package:flutter/material.dart';
@@ -116,7 +115,7 @@ class _SearchLocationState extends ConsumerState<SearchLocation> {
                         ),
                       ),
                       textEditingController: searchController,
-                      googleAPIKey: AppString.googleMapApiKey,
+                      googleAPIKey: 'GOOGLE_API_KEY',
                       inputDecoration: InputDecoration(
                         hintText: 'Search Location',
                         hintStyle: TextStyle(
