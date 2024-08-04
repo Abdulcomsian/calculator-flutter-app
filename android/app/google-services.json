@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "815491274454",
-    "project_id": "dieselpowered",
-    "storage_bucket": "dieselpowered.appspot.com"
+    "project_number": "604625507280",
+    "project_id": "calculator-flutter-app",
+    "storage_bucket": "calculator-flutter-app.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:815491274454:android:06667072ed667aca051b77",
+        "mobilesdk_app_id": "1:604625507280:android:895456c23120717b811fd5",
         "android_client_info": {
           "package_name": "com.app.calculator"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDFlwicoDjw7Jh2XGh1HzyFkRlmnyOlvOs"
+          "current_key": "AIzaSyDBgrRs1vrI3rXUJlynYucvDtmuivXm668"
         }
       ],
       "services": {

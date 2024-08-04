@@ -50,19 +50,19 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDFlwicoDjw7Jh2XGh1HzyFkRlmnyOlvOs',
-    appId: '1:815491274454:android:06667072ed667aca051b77',
-    messagingSenderId: '815491274454',
-    projectId: 'dieselpowered',
-    storageBucket: 'dieselpowered.appspot.com',
+    apiKey: 'AIzaSyDBgrRs1vrI3rXUJlynYucvDtmuivXm668',
+    appId: '1:604625507280:android:895456c23120717b811fd5',
+    messagingSenderId: '604625507280',
+    projectId: 'calculator-flutter-app',
+    storageBucket: 'calculator-flutter-app.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCd1v8UEqLYvzs7M7ZrgtknWybX8ehjwVc',
-    appId: '1:815491274454:ios:648122334dccbcff051b77',
-    messagingSenderId: '815491274454',
-    projectId: 'dieselpowered',
-    storageBucket: 'dieselpowered.appspot.com',
+    apiKey: 'AIzaSyB4XznynxGGDtHo8vtThb2e8HDBmsaCDdA',
+    appId: '1:604625507280:ios:d07f49c23e697d37811fd5',
+    messagingSenderId: '604625507280',
+    projectId: 'calculator-flutter-app',
+    storageBucket: 'calculator-flutter-app.appspot.com',
     iosBundleId: 'com.app.calculator',
   );
 }
