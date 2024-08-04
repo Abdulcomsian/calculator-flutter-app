@@ -1,6 +1,3 @@
-import 'package:calculator_flutter_app/features/about/presentation/views/about/about_view.dart';
-import 'package:calculator_flutter_app/features/about/presentation/views/privacy_policy/privacy_policy_view.dart';
-import 'package:calculator_flutter_app/features/about/presentation/views/terms_of_service/terms_of_service_view.dart';
 import 'package:calculator_flutter_app/features/auth/presentation/views/forget_password/forgot_password_view.dart';
 import 'package:calculator_flutter_app/features/auth/presentation/views/login/login_view.dart';
 import 'package:calculator_flutter_app/features/auth/presentation/views/otp_verification/otp_verification_view.dart';
@@ -66,24 +63,7 @@ final router = GoRouter(
         return const ProfileView();
       },
     ),
-    GoRoute(
-      path: RoutePaths.about,
-      builder: (context, state) {
-        return const AboutView();
-      },
-    ),
-    GoRoute(
-      path: RoutePaths.privacyPolicy,
-      builder: (context, state) {
-        return const PrivacyPolicyView();
-      },
-    ),
-    GoRoute(
-      path: RoutePaths.termsOfService,
-      builder: (context, state) {
-        return const TermsOfServiceView();
-      },
-    ),
+   
     GoRoute(
       path: RoutePaths.mapView,
       builder: (context, state) {
