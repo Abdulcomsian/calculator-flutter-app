@@ -1,17 +1,16 @@
-import 'package:diesel_powered/common/extensions/num.dart';
-import 'package:diesel_powered/common/widgets/app_filled_button.dart';
-import 'package:diesel_powered/common/widgets/app_text.dart';
-import 'package:diesel_powered/common/widgets/phone_number_input_field.dart';
-import 'package:diesel_powered/features/auth/domain/models/auth_step/auth_step_model.dart';
-import 'package:diesel_powered/features/auth/presentation/providers/auth_step_provider/auth_step_provider.dart';
-import 'package:diesel_powered/features/auth/presentation/providers/reset_password/initiate_reset_password_verification_provider.dart';
-import 'package:diesel_powered/features/auth/presentation/providers/reset_password/reset_password_form_provider.dart';
-import 'package:diesel_powered/features/auth/presentation/views/widgets/auth_bg_widget.dart';
-import 'package:diesel_powered/util/exceptions/message_exception.dart';
-import 'package:diesel_powered/util/loading/loading.dart';
-import 'package:diesel_powered/util/resources/r.dart';
-import 'package:diesel_powered/util/router/paths.dart';
-import 'package:diesel_powered/util/toast/toast.dart';
+import 'package:calculator_flutter_app/common/extensions/num.dart';
+import 'package:calculator_flutter_app/common/widgets/app_filled_button.dart';
+import 'package:calculator_flutter_app/common/widgets/app_text.dart';
+import 'package:calculator_flutter_app/features/auth/domain/models/auth_step/auth_step_model.dart';
+import 'package:calculator_flutter_app/features/auth/presentation/providers/auth_step_provider/auth_step_provider.dart';
+import 'package:calculator_flutter_app/features/auth/presentation/providers/reset_password/initiate_reset_password_verification_provider.dart';
+import 'package:calculator_flutter_app/features/auth/presentation/providers/reset_password/reset_password_form_provider.dart';
+import 'package:calculator_flutter_app/features/auth/presentation/views/widgets/auth_bg_widget.dart';
+import 'package:calculator_flutter_app/util/exceptions/message_exception.dart';
+import 'package:calculator_flutter_app/util/loading/loading.dart';
+import 'package:calculator_flutter_app/util/resources/r.dart';
+import 'package:calculator_flutter_app/util/router/paths.dart';
+import 'package:calculator_flutter_app/util/toast/toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -108,14 +107,6 @@ class _ForgotPasswordViewState extends ConsumerState<ForgotPasswordView> {
                   fontSize: 15,
                   color: R.colors.black,
                   textAlign: TextAlign.center,
-                ),
-                31.78.hb,
-                PhoneNumberInputField(
-                  onChanged: (v) {
-                    ref
-                        .read(resetPasswordFormProvider.notifier)
-                        .setPhone(v.completeNumber);
-                  },
                 ),
                 80.hb,
                 Center(
