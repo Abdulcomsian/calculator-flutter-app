@@ -107,7 +107,7 @@ class _ForgotPasswordViewState extends ConsumerState<ForgotPasswordView> {
                   fontSize: 15,
                   color: R.colors.black,
                   textAlign: TextAlign.center,
-                ),
+                ),      
                 80.hb,
                 Center(
                   child: AppFilledButton(
