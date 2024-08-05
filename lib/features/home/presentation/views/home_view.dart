@@ -4,6 +4,7 @@ import 'package:calculator_flutter_app/features/auth/presentation/views/profile/
 import 'package:calculator_flutter_app/features/home/domain/enums/bottom_nav_item.dart';
 import 'package:calculator_flutter_app/features/home/presentation/providers/selected_nav_item_provider/selected_nav_item_provider.dart';
 import 'package:calculator_flutter_app/features/home/presentation/views/widgets/bottom_nav_bar.dart';
+import 'package:calculator_flutter_app/features/schedule_planner/presentation/views/schedule_planner/schedule_planner_view.dart';
 import 'package:calculator_flutter_app/features/weather/presentation/views/weather/weather_view.dart';
 import 'package:calculator_flutter_app/util/resources/r.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class HomeView extends ConsumerStatefulWidget {
 class _HomeViewState extends ConsumerState<HomeView> {
   Widget view(BottomNavItem currentView) {
     if (currentView.isLocation) return const SizedBox();
-    if (currentView.isCalendar) return const SizedBox();
+    if (currentView.isCalendar) return SchedulePlanner();
     if (currentView.isCalculator) return const SizedBox();
     if (currentView.isWeather) return const WeatherView();
     if (currentView.isProfile) return const ProfileView();

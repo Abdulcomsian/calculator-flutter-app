@@ -1,5 +1,6 @@
 import 'package:calculator_flutter_app/common/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TextInputField extends StatelessWidget {
   const TextInputField({
@@ -15,6 +16,7 @@ class TextInputField extends StatelessWidget {
     this.maxLines,
     this.minLines,
     this.maxLength,
+    this.radius,
     super.key,
   });
 
@@ -30,10 +32,12 @@ class TextInputField extends StatelessWidget {
   final int? minLines;
   final int? maxLines;
   final int? maxLength;
+  final double? radius;
 
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
+      radius: radius ?? 47.r,
       labelText: labelText,
       hintText: hintText,
       controller: controller,

@@ -13,52 +13,55 @@ class AppBottomNavBar extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final selectedNavItem = ref.watch(selectedNavItemProvider);
 
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        Container(
-          height: 1.h,
-          width: 1.sw,
-          color: R.colors.primary.withOpacity(0.2),
-        ),
-        SizedBox(
-          height: 62.h,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: List.generate(
-              BottomNavItem.values.length,
-              (index) {
-                final currentItem = BottomNavItem.values[index];
+    return Container(
+      color: R.colors.white,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Container(
+            height: 1.h,
+            width: 1.sw,
+            color: R.colors.primary.withOpacity(0.2),
+          ),
+          SizedBox(
+            height: 62.h,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: List.generate(
+                BottomNavItem.values.length,
+                (index) {
+                  final currentItem = BottomNavItem.values[index];
 
-                return InkWell(
-                  borderRadius: BorderRadius.circular(8.r),
-                  onTap: () {
-                    ref.read(selectedNavItemProvider.notifier).state =
-                        currentItem;
-                  },
-                  child: Padding(
-                    padding: EdgeInsets.all(4.r),
-                    child: SizedBox(
-                      width: 24.r,
-                      height: 24.r,
-                      child: SvgPicture.asset(
-                        currentItem.iconPath,
-                        colorFilter: ColorFilter.mode(
-                          currentItem == selectedNavItem
-                              ? R.colors.primary
-                              : R.colors.secondary,
-                          BlendMode.srcIn,
+                  return InkWell(
+                    borderRadius: BorderRadius.circular(8.r),
+                    onTap: () {
+                      ref.read(selectedNavItemProvider.notifier).state =
+                          currentItem;
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.all(4.r),
+                      child: SizedBox(
+                        width: 24.r,
+                        height: 24.r,
+                        child: SvgPicture.asset(
+                          currentItem.iconPath,
+                          colorFilter: ColorFilter.mode(
+                            currentItem == selectedNavItem
+                                ? R.colors.primary
+                                : R.colors.secondary,
+                            BlendMode.srcIn,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                );
-              },
+                  );
+                },
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
