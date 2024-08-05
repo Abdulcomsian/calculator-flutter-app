@@ -9,7 +9,7 @@ class YearPickerDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text('Select Year'),
+      title: const Text('Select Year'),
       content: SizedBox(
         width: double.minPositive,
         height: 400.h,

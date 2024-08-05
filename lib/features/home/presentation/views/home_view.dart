@@ -20,7 +20,7 @@ class HomeView extends ConsumerStatefulWidget {
 class _HomeViewState extends ConsumerState<HomeView> {
   Widget view(BottomNavItem currentView) {
     if (currentView.isLocation) return const SizedBox();
-    if (currentView.isCalendar) return SchedulePlanner();
+    if (currentView.isCalendar) return const SchedulePlanner();
     if (currentView.isCalculator) return const SizedBox();
     if (currentView.isWeather) return const WeatherView();
     if (currentView.isProfile) return const ProfileView();

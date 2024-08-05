@@ -23,7 +23,7 @@ class AuthBgWidget extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Container(
+          SizedBox(
             width: 1.sw,
             height: 1.sh,
             child: Column(

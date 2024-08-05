@@ -1,9 +1,7 @@
 import 'package:calculator_flutter_app/common/extensions/num.dart';
-import 'package:calculator_flutter_app/firebase_options.dart';
 import 'package:calculator_flutter_app/helpers/persistence/persistence_helper.dart';
 import 'package:calculator_flutter_app/util/di/di.dart';
 import 'package:calculator_flutter_app/util/router/router.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

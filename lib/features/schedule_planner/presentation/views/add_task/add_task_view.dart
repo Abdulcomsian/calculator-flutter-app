@@ -26,8 +26,8 @@ class _AddTaskViewState extends State<AddTaskView> {
   final _formKey = GlobalKey<FormState>();
   late DateTime _selectedDate;
 
-  TimeOfDay _selectedStartTime = TimeOfDay(hour: 9, minute: 0);
-  TimeOfDay _selectedEndTime = TimeOfDay(hour: 10, minute: 0);
+  TimeOfDay _selectedStartTime = const TimeOfDay(hour: 9, minute: 0);
+  TimeOfDay _selectedEndTime = const TimeOfDay(hour: 10, minute: 0);
 
   final _titleController = TextEditingController();
   final _descriptionController = TextEditingController();
@@ -88,7 +88,7 @@ class _AddTaskViewState extends State<AddTaskView> {
     return Column(
       children: [
         32.hb,
-        BackButtonWidget(
+        const BackButtonWidget(
           title: 'Create Task',
         ),
         20.hb,
