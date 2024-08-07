@@ -22,4 +22,6 @@ class RoutePaths {
   static const String calculateItem = '/calculate-item';
   static const String paymentMethod = '/payment-method';
   static const String addCard = '/add-card';
+  static const String contactList = '/contact-list';
+  static const String addContact = '/add-contact';
 }

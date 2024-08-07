@@ -5,6 +5,8 @@ import 'package:calculator_flutter_app/features/auth/presentation/views/profile/
 import 'package:calculator_flutter_app/features/auth/presentation/views/register/sign_up_view.dart';
 import 'package:calculator_flutter_app/features/auth/presentation/views/reset_password/reset_password.dart';
 import 'package:calculator_flutter_app/features/calculator/presentation/views/calculate_item/calculate_item_view.dart';
+import 'package:calculator_flutter_app/features/contact/presentation/views/add_contact/add_contact_view.dart';
+import 'package:calculator_flutter_app/features/contact/presentation/views/contact_list/contact_list_view.dart';
 import 'package:calculator_flutter_app/features/google_maps/domain/models/lat_lng/lat_lng_model.dart';
 import 'package:calculator_flutter_app/features/google_maps/presentation/views/search_location.dart';
 import 'package:calculator_flutter_app/features/google_maps/presentation/views/view_location.dart';
@@ -102,6 +104,18 @@ final router = GoRouter(
       path: RoutePaths.addCard,
       builder: (context, state) {
         return const AddCardView();
+      },
+    ),
+    GoRoute(
+      path: RoutePaths.addContact,
+      builder: (context, state) {
+        return const AddContactView();
+      },
+    ),
+    GoRoute(
+      path: RoutePaths.contactList,
+      builder: (context, state) {
+        return const ContactListView();
       },
     ),
   ],

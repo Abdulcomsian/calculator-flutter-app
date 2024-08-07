@@ -21,28 +21,34 @@ class UserInfoWidget extends StatelessWidget {
         final userAsync = ref.watch(userProvider);
 
         if (!userAsync.hasValue) {
-          return Column(
+          return Row(
             children: [
               ShimmerEffect(
                 child: CircleAvatar(
-                  radius: 42.r,
+                  radius: 26.r,
+                  backgroundColor: R.colors.black,
                 ),
               ),
-              16.hb,
-              ShimmerEffect(
-                child: Container(
-                  height: 12.h,
-                  width: 100.w,
-                  color: R.colors.black,
-                ),
-              ),
-              16.hb,
-              ShimmerEffect(
-                child: Container(
-                  height: 10.h,
-                  width: 100.w,
-                  color: R.colors.black,
-                ),
+              8.wb,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ShimmerEffect(
+                    child: Container(
+                      height: 12.h,
+                      width: 150.w,
+                      color: R.colors.black,
+                    ),
+                  ),
+                  16.hb,
+                  ShimmerEffect(
+                    child: Container(
+                      height: 10.h,
+                      width: 100.w,
+                      color: R.colors.black,
+                    ),
+                  ),
+                ],
               ),
             ],
           );

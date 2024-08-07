@@ -222,7 +222,9 @@ class _ProfileViewState extends ConsumerState<ProfileView> {
             _buildSettingTile(
               name: 'Contact List',
               icon: Assets.svgs.addContactIcon.svg(),
-              onTap: () {},
+              onTap: () {
+                GoRouter.of(context).push(RoutePaths.contactList);
+              },
             ),
 
             _buildSettingTile(
