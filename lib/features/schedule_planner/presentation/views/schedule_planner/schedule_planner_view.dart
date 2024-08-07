@@ -346,13 +346,18 @@ class _SchedulePlannerState extends ConsumerState<SchedulePlanner> {
           });
         }
       },
-      child: Container(
-        height: 50.h,
-        alignment: Alignment.center,
-        child: Text(
-          "$selectedYear",
-          style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.bold),
-        ),
+      child: Row(
+        children: [
+          Text(
+            "$selectedYear",
+            style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.bold),
+          ),
+          8.wb,
+          Icon(
+            Icons.keyboard_arrow_down,
+            size: 16.r,
+          )
+        ],
       ),
     );
   }
