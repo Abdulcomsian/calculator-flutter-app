@@ -1,16 +1,12 @@
 import 'package:calculator_flutter_app/common/extensions/num.dart';
 import 'package:calculator_flutter_app/common/widgets/app_text.dart';
-import 'package:calculator_flutter_app/common/widgets/shimmer_effect.dart';
-import 'package:calculator_flutter_app/common/widgets/user_avatar.dart';
 import 'package:calculator_flutter_app/common/widgets/user_info_widget.dart';
-import 'package:calculator_flutter_app/features/auth/presentation/providers/user_provider/user_provider.dart';
 import 'package:calculator_flutter_app/features/premium/presentation/views/widgets/get_premium_card_widget.dart';
-import 'package:calculator_flutter_app/gen/assets.gen.dart';
 import 'package:calculator_flutter_app/util/resources/r.dart';
+import 'package:calculator_flutter_app/util/router/paths.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class CalculatorView extends StatefulWidget {
   const CalculatorView({super.key});
@@ -52,7 +48,12 @@ class _CalculatorViewState extends State<CalculatorView> {
                       padding: EdgeInsets.only(bottom: 16.h),
                       child: _buildCalculatorTile(
                         title: calcList[index],
-                        onTap: () {},
+                        onTap: () {
+                          GoRouter.of(context).push(
+                            RoutePaths.calculateItem,
+                            extra: calcList[index],
+                          );
+                        },
                       ),
                     );
                   },

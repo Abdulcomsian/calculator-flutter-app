@@ -19,4 +19,5 @@ class RoutePaths {
   static const String termsOfService = '/termsOfService';
   static const String mapView = '/map-view';
   static const String searchLocation = '/search-location';
+  static const String calculateItem = '/calculate-item';
 }

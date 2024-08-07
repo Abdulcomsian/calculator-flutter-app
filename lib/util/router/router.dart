@@ -4,6 +4,7 @@ import 'package:calculator_flutter_app/features/auth/presentation/views/otp_veri
 import 'package:calculator_flutter_app/features/auth/presentation/views/profile/profile_view.dart';
 import 'package:calculator_flutter_app/features/auth/presentation/views/register/sign_up_view.dart';
 import 'package:calculator_flutter_app/features/auth/presentation/views/reset_password/reset_password.dart';
+import 'package:calculator_flutter_app/features/calculator/presentation/views/calculate_item/calculate_item_view.dart';
 import 'package:calculator_flutter_app/features/google_maps/domain/models/lat_lng/lat_lng_model.dart';
 import 'package:calculator_flutter_app/features/google_maps/presentation/views/search_location.dart';
 import 'package:calculator_flutter_app/features/google_maps/presentation/views/view_location.dart';
@@ -63,7 +64,6 @@ final router = GoRouter(
         return const ProfileView();
       },
     ),
-   
     GoRoute(
       path: RoutePaths.mapView,
       builder: (context, state) {
@@ -81,6 +81,13 @@ final router = GoRouter(
       path: RoutePaths.quotes,
       builder: (context, state) {
         return const QuotesView();
+      },
+    ),
+    GoRoute(
+      path: RoutePaths.calculateItem,
+      builder: (context, state) {
+        final data = state.extra as String;
+        return CalculateItemView(title: data);
       },
     ),
   ],
