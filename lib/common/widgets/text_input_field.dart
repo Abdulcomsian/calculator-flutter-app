@@ -17,6 +17,7 @@ class TextInputField extends StatelessWidget {
     this.minLines,
     this.maxLength,
     this.radius,
+    this.color,
     super.key,
   });
 
@@ -33,6 +34,7 @@ class TextInputField extends StatelessWidget {
   final int? maxLines;
   final int? maxLength;
   final double? radius;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +44,13 @@ class TextInputField extends StatelessWidget {
       hintText: hintText,
       controller: controller,
       keyboardType: TextInputType.text,
-      validator: validator,
+      validator: validator ??
+          (v) {
+            if (v?.isEmpty ?? true) {
+              return '$hintText is required';
+            }
+            return null;
+          },
       onChanged: onChanged,
       suffixIcon: suffixIcon,
       focusNode: focusNode,
@@ -51,6 +59,7 @@ class TextInputField extends StatelessWidget {
       minLine: minLines ?? 1,
       maxLines: maxLines ?? 1,
       maxLength: maxLength,
+      fillColor: color,
     );
   }
 }

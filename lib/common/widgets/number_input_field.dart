@@ -36,7 +36,7 @@ class NumberInputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
-      labelText: labelText ?? '',
+      labelText: labelText,
       hintText: hintText ?? '',
       controller: controller,
       enabled: enabled,

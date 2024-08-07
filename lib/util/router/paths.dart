@@ -20,4 +20,6 @@ class RoutePaths {
   static const String mapView = '/map-view';
   static const String searchLocation = '/search-location';
   static const String calculateItem = '/calculate-item';
+  static const String paymentMethod = '/payment-method';
+  static const String addCard = '/add-card';
 }

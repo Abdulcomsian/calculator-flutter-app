@@ -9,6 +9,8 @@ import 'package:calculator_flutter_app/features/google_maps/domain/models/lat_ln
 import 'package:calculator_flutter_app/features/google_maps/presentation/views/search_location.dart';
 import 'package:calculator_flutter_app/features/google_maps/presentation/views/view_location.dart';
 import 'package:calculator_flutter_app/features/home/presentation/views/home_view.dart';
+import 'package:calculator_flutter_app/features/premium/presentation/views/add_card/add_card_view.dart';
+import 'package:calculator_flutter_app/features/premium/presentation/views/payment_method/payment_method_view.dart';
 import 'package:calculator_flutter_app/features/quote/presentation/views/quotes/quotes_view.dart';
 import 'package:calculator_flutter_app/features/splash/presentation/splash_view.dart';
 import 'package:calculator_flutter_app/util/router/paths.dart';
@@ -88,6 +90,18 @@ final router = GoRouter(
       builder: (context, state) {
         final data = state.extra as String;
         return CalculateItemView(title: data);
+      },
+    ),
+    GoRoute(
+      path: RoutePaths.paymentMethod,
+      builder: (context, state) {
+        return const PaymentMethodView();
+      },
+    ),
+    GoRoute(
+      path: RoutePaths.addCard,
+      builder: (context, state) {
+        return const AddCardView();
       },
     ),
   ],
