@@ -3,7 +3,6 @@ import 'package:calculator_flutter_app/common/widgets/app_filled_button.dart';
 import 'package:calculator_flutter_app/common/widgets/app_text.dart';
 import 'package:calculator_flutter_app/common/widgets/back_button_widget.dart';
 import 'package:calculator_flutter_app/common/widgets/user_avatar.dart';
-import 'package:calculator_flutter_app/features/premium/domain/models/card/card_model.dart';
 import 'package:calculator_flutter_app/gen/assets.gen.dart';
 import 'package:calculator_flutter_app/util/resources/r.dart';
 import 'package:calculator_flutter_app/util/router/paths.dart';
@@ -74,7 +73,7 @@ class ContactListView extends ConsumerWidget {
                             children: [
                               UserProfileAvatar(
                                 image:
-                                    'https://randomuser.me/api/portraits/men/${index}.jpg',
+                                    'https://randomuser.me/api/portraits/men/$index.jpg',
                                 size: 54.r,
                               ),
                               12.wb,
@@ -105,62 +104,6 @@ class ContactListView extends ConsumerWidget {
               ),
             ),
           ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildCard({
-    required CardModel card,
-    required VoidCallback onTap,
-    required bool isSelected,
-  }) {
-    return InkWell(
-      borderRadius: BorderRadius.circular(12.r),
-      onTap: onTap,
-      child: Container(
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: isSelected ? R.colors.primary : R.colors.greyTextField,
-          ),
-          color: R.colors.greyTextField,
-          borderRadius: BorderRadius.circular(12.r),
-        ),
-        child: ListTile(
-          leading: Padding(
-            padding: EdgeInsets.only(top: 10.h),
-            child: Image.asset(
-              card.icon,
-              height: 15.h,
-              width: 38.w,
-            ),
-          ),
-          title: AppText(
-            text: card.name,
-            fontWeight: FontWeight.w500,
-            fontSize: 14,
-          ),
-          subtitle: AppText(
-            text: card.number,
-            fontWeight: FontWeight.w500,
-            fontSize: 12,
-            color: R.colors.secondary.withOpacity(0.5),
-          ),
-          trailing: isSelected
-              ? CircleAvatar(
-                  radius: 12.r,
-                  backgroundColor: R.colors.primary,
-                  child: Icon(
-                    Icons.check,
-                    size: 18.r,
-                    color: R.colors.white,
-                  ),
-                )
-              : Icon(
-                  Icons.radio_button_off,
-                  size: 28.r,
-                  color: R.colors.secondary.withOpacity(0.4),
-                ),
         ),
       ),
     );

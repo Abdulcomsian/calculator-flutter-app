@@ -5,7 +5,6 @@ import 'package:calculator_flutter_app/gen/assets.gen.dart';
 import 'package:calculator_flutter_app/util/resources/r.dart';
 import 'package:calculator_flutter_app/util/router/paths.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
