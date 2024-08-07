@@ -3,21 +3,15 @@ import 'package:calculator_flutter_app/common/extensions/capitalize_string.dart'
 import 'package:calculator_flutter_app/common/extensions/num.dart';
 import 'package:calculator_flutter_app/common/extensions/temperature_conversion.dart';
 import 'package:calculator_flutter_app/common/widgets/app_text.dart';
-import 'package:calculator_flutter_app/features/google_maps/domain/models/location/location_model.dart';
-import 'package:calculator_flutter_app/features/google_maps/presentation/providers/request_location_permission_provider.dart';
-import 'package:calculator_flutter_app/features/image_picker/presentation/views/popups/allow_permission_popup.dart';
 import 'package:calculator_flutter_app/features/weather/presentation/providers/get_current_weather_provider.dart';
 import 'package:calculator_flutter_app/features/weather/presentation/providers/user_current_location_provider.dart';
 import 'package:calculator_flutter_app/gen/assets.gen.dart';
 import 'package:calculator_flutter_app/util/consts/api.dart';
-import 'package:calculator_flutter_app/util/exceptions/message_exception.dart';
 import 'package:calculator_flutter_app/util/resources/r.dart';
 import 'package:calculator_flutter_app/util/toast/toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:geocoding/geocoding.dart';
 import 'package:shimmer/shimmer.dart';
 
 class WeatherView extends ConsumerStatefulWidget {
@@ -28,61 +22,6 @@ class WeatherView extends ConsumerStatefulWidget {
 }
 
 class _WeatherViewState extends ConsumerState<WeatherView> {
-  @override
-  void initState() {
-    super.initState();
-    getCurrentLocation();
-  }
-
-  Future<void> _requestLocationPermission() async {
-    try {
-      await ref.read(requestLocationPermissionProvider.future);
-
-      return;
-    } on MessageException catch (e) {
-      showToast(msg: e.message);
-      return;
-    } on LocationPermissionDenied {
-      showToast(msg: 'Location Permission is denied');
-      return;
-    } on LocationPermissionDeniedPermanently {
-      if (mounted) {
-        await showDialog<void>(
-          context: context,
-          builder: (context) => const Dialog(
-            child: RequestPermissionWidget(
-              icon: Icons.location_on,
-              description:
-                  'Allow app to access you location while you use the app',
-            ),
-          ),
-        );
-      }
-      return;
-    } catch (e) {
-      showToast(msg: 'Something went wrong');
-    }
-    return;
-  }
-
-  Future<void> getCurrentLocation() async {
-    _requestLocationPermission();
-    final position = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.high);
-
-    List<Placemark> placemarks =
-        await placemarkFromCoordinates(position.latitude, position.longitude);
-    Placemark place = placemarks[0];
-
-    final location = LocationModel(
-      latitude: position.latitude,
-      longitude: position.longitude,
-      address: "${place.administrativeArea}, ${place.country}",
-    );
-
-    ref.read(userCurrentLocationProvider.notifier).state = location;
-  }
-
   getCurrentWeather() async {
     try {
       await ref.read(getCurrentWeatherProvider.future);
