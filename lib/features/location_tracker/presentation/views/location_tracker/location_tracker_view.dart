@@ -21,14 +21,14 @@ class LocationTrackerView extends StatelessWidget {
             height: 1.sh,
             child: Column(
               children: [
-                BackButtonWidget(
+                const BackButtonWidget(
                   title: 'Location Tracker',
                 ),
                 Container(
                   height: 414.h,
                   color: R.colors.primary.withOpacity(0.3),
-                  child: Center(
-                    child: AppText(
+                  child: const Center(
+                    child: const AppText(
                       text: 'Map Here',
                     ),
                   ),

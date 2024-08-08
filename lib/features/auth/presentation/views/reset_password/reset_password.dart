@@ -1,12 +1,10 @@
 import 'package:calculator_flutter_app/common/extensions/num.dart';
 import 'package:calculator_flutter_app/common/widgets/app_filled_button.dart';
-import 'package:calculator_flutter_app/common/widgets/app_text.dart';
 import 'package:calculator_flutter_app/common/widgets/back_button_widget.dart';
 import 'package:calculator_flutter_app/common/widgets/password_input_field.dart';
 import 'package:calculator_flutter_app/features/auth/presentation/providers/auth_step_provider/auth_step_provider.dart';
 import 'package:calculator_flutter_app/features/auth/presentation/providers/reset_password/reset_password_form_provider.dart';
 import 'package:calculator_flutter_app/features/auth/presentation/providers/reset_password/reset_password_provider.dart';
-import 'package:calculator_flutter_app/features/auth/presentation/views/widgets/auth_bg_widget.dart';
 import 'package:calculator_flutter_app/gen/assets.gen.dart';
 import 'package:calculator_flutter_app/util/exceptions/message_exception.dart';
 import 'package:calculator_flutter_app/util/loading/loading.dart';

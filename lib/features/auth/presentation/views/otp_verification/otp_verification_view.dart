@@ -13,7 +13,6 @@ import 'package:calculator_flutter_app/features/auth/presentation/providers/upda
 import 'package:calculator_flutter_app/features/auth/presentation/providers/update_profile_provider/update_profile_provider.dart';
 import 'package:calculator_flutter_app/features/auth/presentation/providers/verify_reset_password_otp_provider/verify_reset_password_otp_provider.dart';
 import 'package:calculator_flutter_app/features/auth/presentation/providers/verify_update_profile_otp_provider/verify_update_profile_otp_provider.dart';
-import 'package:calculator_flutter_app/features/auth/presentation/views/widgets/auth_bg_widget.dart';
 import 'package:calculator_flutter_app/gen/assets.gen.dart';
 import 'package:calculator_flutter_app/util/exceptions/message_exception.dart';
 import 'package:calculator_flutter_app/util/loading/loading.dart';

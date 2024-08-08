@@ -3,11 +3,11 @@ import 'package:calculator_flutter_app/common/widgets/app_filled_button.dart';
 import 'package:calculator_flutter_app/common/widgets/app_text.dart';
 import 'package:calculator_flutter_app/common/widgets/back_button_widget.dart';
 import 'package:calculator_flutter_app/common/widgets/email_input_field.dart';
+import 'package:calculator_flutter_app/common/widgets/text_input_field.dart';
 import 'package:calculator_flutter_app/features/auth/domain/models/auth_step/auth_step_model.dart';
 import 'package:calculator_flutter_app/features/auth/presentation/providers/auth_step_provider/auth_step_provider.dart';
 import 'package:calculator_flutter_app/features/auth/presentation/providers/reset_password/initiate_reset_password_verification_provider.dart';
 import 'package:calculator_flutter_app/features/auth/presentation/providers/reset_password/reset_password_form_provider.dart';
-import 'package:calculator_flutter_app/features/auth/presentation/views/widgets/auth_bg_widget.dart';
 import 'package:calculator_flutter_app/features/auth/presentation/views/widgets/social_sign_in_buttons.dart';
 import 'package:calculator_flutter_app/gen/assets.gen.dart';
 import 'package:calculator_flutter_app/util/exceptions/message_exception.dart';
@@ -134,7 +134,7 @@ class _ForgotPasswordViewState extends ConsumerState<ForgotPasswordView> {
                           ],
                         ),
                         16.hb,
-                        EmailInputField(
+                        TextInputField(
                           onChanged: (v) {
                             ref
                                 .read(resetPasswordFormProvider.notifier)

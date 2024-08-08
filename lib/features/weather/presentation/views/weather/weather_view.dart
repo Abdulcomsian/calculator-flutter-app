@@ -82,7 +82,7 @@ class _WeatherViewState extends ConsumerState<WeatherView> {
                       children: [
                         Container(
                           height: 96.h,
-                          padding: EdgeInsets.symmetric(horizontal: 18.w),
+                          padding: EdgeInsets.symmetric(horizontal: 12.w),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10.r),
                             gradient: LinearGradient(
@@ -99,17 +99,22 @@ class _WeatherViewState extends ConsumerState<WeatherView> {
                                 imageUrl:
                                     '${Apis.weatherIcon}/${weather!.icon}.png',
                               ),
-                              16.wb,
+                              12.wb,
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  AppText(
-                                    text: location?.address ?? 'Your place',
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w600,
-                                    color: R.colors.white,
-                                    letterSpacing: 0.08,
+                                  SizedBox(
+                                    width: 164.w,
+                                    child: AppText(
+                                      text: location?.address ?? 'Your place',
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w600,
+                                      color: R.colors.white,
+                                      letterSpacing: 0.08,
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
                                   ),
                                   4.hb,
                                   AppText(

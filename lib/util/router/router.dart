@@ -68,19 +68,19 @@ final router = GoRouter(
         return const ProfileView();
       },
     ),
-    GoRoute(
-      path: RoutePaths.mapView,
-      builder: (context, state) {
-        final data = state.extra as LatLngModel;
-        return ViewLocation(latLng: data);
-      },
-    ),
-    GoRoute(
-      path: RoutePaths.searchLocation,
-      builder: (context, state) {
-        return const SearchLocation();
-      },
-    ),
+    // GoRoute(
+    //   path: RoutePaths.mapView,
+    //   builder: (context, state) {
+    //     final data = state.extra as LatLngModel;
+    //     return ViewLocation(latLng: data);
+    //   },
+    // ),
+    // GoRoute(
+    //   path: RoutePaths.searchLocation,
+    //   builder: (context, state) {
+    //     return const SearchLocation();
+    //   },
+    // ),
     GoRoute(
       path: RoutePaths.quotes,
       builder: (context, state) {
