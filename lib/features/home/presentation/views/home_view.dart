@@ -8,6 +8,7 @@ import 'package:calculator_flutter_app/features/home/domain/enums/bottom_nav_ite
 import 'package:calculator_flutter_app/features/home/presentation/providers/selected_nav_item_provider/selected_nav_item_provider.dart';
 import 'package:calculator_flutter_app/features/home/presentation/views/widgets/bottom_nav_bar.dart';
 import 'package:calculator_flutter_app/features/image_picker/presentation/views/popups/allow_permission_popup.dart';
+import 'package:calculator_flutter_app/features/location_tracker/presentation/views/location_tracker/location_tracker_view.dart';
 import 'package:calculator_flutter_app/features/schedule_planner/presentation/views/schedule_planner/schedule_planner_view.dart';
 import 'package:calculator_flutter_app/features/weather/presentation/providers/user_current_location_provider.dart';
 import 'package:calculator_flutter_app/features/weather/presentation/views/weather/weather_view.dart';
@@ -28,7 +29,7 @@ class HomeView extends ConsumerStatefulWidget {
 
 class _HomeViewState extends ConsumerState<HomeView> {
   Widget view(BottomNavItem currentView) {
-    if (currentView.isLocation) return const SizedBox();
+    if (currentView.isLocation) return const LocationTrackerView();
     if (currentView.isCalendar) return const SchedulePlanner();
     if (currentView.isCalculator) return const CalculatorView();
     if (currentView.isWeather) return const WeatherView();
