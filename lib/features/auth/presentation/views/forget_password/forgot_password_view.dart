@@ -2,7 +2,6 @@ import 'package:calculator_flutter_app/common/extensions/num.dart';
 import 'package:calculator_flutter_app/common/widgets/app_filled_button.dart';
 import 'package:calculator_flutter_app/common/widgets/app_text.dart';
 import 'package:calculator_flutter_app/common/widgets/back_button_widget.dart';
-import 'package:calculator_flutter_app/common/widgets/email_input_field.dart';
 import 'package:calculator_flutter_app/common/widgets/text_input_field.dart';
 import 'package:calculator_flutter_app/features/auth/domain/models/auth_step/auth_step_model.dart';
 import 'package:calculator_flutter_app/features/auth/presentation/providers/auth_step_provider/auth_step_provider.dart';
