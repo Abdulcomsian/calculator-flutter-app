@@ -55,12 +55,16 @@ class AuthRemoteDataSourceImp implements AuthRemoteDataSource {
 
   @override
   Future<VerifyOtpUsecaseOutput> verifyOtp(VerifyOtpUsecaseInput input) async {
-    throw UnimplementedError();
+    await Future.delayed(const Duration(seconds: 2));
+
+    return VerifyOtpUsecaseOutput(verificationToken: '1234');
   }
 
   @override
   Future<ResetPasswordUsecaseOutput> resetPassword(
       ResetPasswordUsecaseInput input) async {
+    await Future.delayed(const Duration(seconds: 2));
+
     return ResetPasswordUsecaseOutput();
   }
 
